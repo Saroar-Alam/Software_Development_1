@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Basics</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #e8f5e9;
+        color: #1f2937;
+      }
+      .header {
+        background-color: #0f3d3e;
+        color: #e8eaf6;
+        padding: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 12px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .card {
+        background-color: #b1cec7;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        padding: 45px;
+        margin: 20px;
+        text-align: center;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+        color: #b9dcf5;
+      }
+      nav {
+        display: flex;
+        gap: 35px;
+      }
+      #main-title {
+        font-size: 42px;
+      }
+      .card h2 {
+        font-size: 28px;
+      }
+      .card p {
+        font-size: 17px;
+      }
+      main {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 id="main-title">Flex Basics</h1>
+      <nav>
+        <a href="w2_c3_css.html">CSS Basics</a>
+
+        <a href="w3_c1_flex.html">Flex Basics</a>
+      </nav>
+    </header>
+    <main>
+      <div class="card">
+        <h2>3AM</h2>
+        <p>Student number: 40</p>
+      </div>
+      <div class="card">
+        <h2>3DM</h2>
+        <p>Student number: 45</p>
+      </div>
+      <div class="card">
+        <h2>5AM</h2>
+        <p>Student number: 36</p>
+      </div>
+
+      <div class="card">
+        <h2>7CM</h2>
+        <p>Student number: 30</p>
+      </div>
+    </main>
+  </body>
+</html>
