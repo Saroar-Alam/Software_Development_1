@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saroar | CSE Student at IIUC</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <span class="logo">Saroar</span>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+
+        <div class="about-image-wrap">
+          <img
+            src="images/profile.jpg"
+            alt="Profile photo of Saroar, CSE student at IIUC"
+            class="profile-img"
+          />
+        </div>
+
+        <div class="about-text">
+          <p class="about-label">Hello, I'm</p>
+          <h1 class="about-name">Saroar</h1>
+          <p class="about-tagline">CSE Student &nbsp;·&nbsp; IIUC &nbsp;·&nbsp; Autumn 2026</p>
+          <p class="about-bio">
+            I'm a 3rd-semester Computer Science and Engineering student at
+            International Islamic University Chittagong (IIUC), Section AM.
+            I'm passionate about writing clean code and solving real-world problems,
+            with growing interest in AI/ML, cybersecurity, and cloud engineering.
+          </p>
+          <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <span class="skill-icon">🌐</span>
+            <h3>HTML &amp; CSS</h3>
+            <p>Semantic markup, responsive layouts using Flexbox and CSS Grid.</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">🐍</span>
+            <h3>Python</h3>
+            <p>Basic scripting, problem-solving, and beginner-level programming.</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">⚙️</span>
+            <h3>C Programming</h3>
+            <p>Structured programming, algorithms, and logic building in C.</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">🔧</span>
+            <h3>Git &amp; GitHub</h3>
+            <p>Version control, repository management, and deploying projects.</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">💡</span>
+            <h3>Digital Electronics</h3>
+            <p>Number systems, logic gates, BCD, Gray code, and Hamming codes.</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">🧠</span>
+            <h3>Problem Solving</h3>
+            <p>Analytical thinking and a foundation in competitive programming.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-list">
+
+          <article class="project-card">
+            <p class="project-meta">CSE-2340 · Mini Project 1</p>
+            <h3 class="project-title">Personal Profile Page</h3>
+            <p class="project-desc">
+              A fully responsive single-page personal portfolio website built from scratch
+              using Semantic HTML5 and CSS3. Features sticky navigation, Flexbox and Grid layouts,
+              an accessible contact form, and mobile-first media queries. Deployed live via GitHub Pages.
+            </p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Responsive Design</span>
+              <span>GitHub Pages</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-meta">Personal Project</p>
+            <h3 class="project-title">Number System Converter</h3>
+            <p class="project-desc">
+              A console-based tool written in C that converts numbers between binary, octal,
+              decimal, and hexadecimal bases. Built to reinforce concepts studied in the
+              Digital Electronics course, including BCD encoding and binary arithmetic.
+            </p>
+            <div class="project-tags">
+              <span>C Programming</span>
+              <span>Algorithms</span>
+              <span>Digital Electronics</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <p class="contact-email">
+          📧 <a href="mailto:saroar@student.iiuc.ac.bd">saroar@student.iiuc.ac.bd</a>
+        </p>
+
+        <form class="contact-form" action="#" method="POST">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Saroar. All rights reserved.</p>
+      <p class="footer-sub">CSE Student &nbsp;·&nbsp; International Islamic University Chittagong</p>
+    </div>
+  </footer>
+
+</body>
+</html>
