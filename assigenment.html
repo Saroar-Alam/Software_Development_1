@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mining: Concepts and Techniques — Chapter 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ========== SLIDES WRAPPER ========== -->
+    <div class="slides-wrapper">
+
+        <!-- ===== PAGE 1 : TITLE ===== -->
+        <div class="slide title-slide active" id="page-1">
+            <div class="big-title">Data Mining:</div>
+            <div class="big-title">Concepts and Techniques</div>
+            <div class="edition-line">(3<sup>rd</sup> ed.)</div>
+            <div class="chapter-line">— Chapter 1 —</div>
+            <div class="authors">
+                Jiawei Han, Micheline Kamber, and Jian Pei<br>
+                University of Illinois at Urbana-Champaign &amp;<br>
+                Simon Fraser University<br>
+                &copy;2011 Han, Kamber &amp; Pei. &nbsp;All rights reserved.
+            </div>
+            <span class="pg-num">1</span>
+        </div>
+
+        <!-- ===== PAGE 2 : TOC — Why Data Mining? ===== -->
+        <div class="slide" id="page-2">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li class="current">Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">2</span>
+        </div>
+
+        <!-- ===== PAGE 3 : WHY DATA MINING ===== -->
+        <div class="slide" id="page-3">
+            <div class="slide-header"><h2>Why Data Mining?</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>The Explosive Growth of Data: from terabytes to petabytes
+                        <ul>
+                            <li>Data collection and data availability
+                                <ul>
+                                    <li>Automated data collection tools, database systems, Web, computerized society</li>
+                                </ul>
+                            </li>
+                            <li>Major sources of abundant data
+                                <ul>
+                                    <li>Business: Web, e-commerce, transactions, stocks, &hellip;</li>
+                                    <li>Science: Remote sensing, bioinformatics, scientific simulation, &hellip;</li>
+                                    <li>Society and everyone: news, digital cameras, YouTube</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">We are drowning in data, but starving for knowledge!</span></li>
+                    <li>&ldquo;Necessity is the mother of invention&rdquo; &mdash; Data mining &mdash; Automated analysis of massive data sets</li>
+                </ul>
+            </div>
+            <span class="pg-num">3</span>
+        </div>
+
+        <!-- ===== PAGE 4 : EVOLUTION OF SCIENCES ===== -->
+        <div class="slide" id="page-4">
+            <div class="slide-header"><h2>Evolution of Sciences</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Before 1600, <strong>empirical science</strong></li>
+                    <li>1600&ndash;1950s, <strong>theoretical science</strong>
+                        <ul>
+                            <li>Each discipline has grown a <em>theoretical</em> component. Theoretical models often motivate experiments and generalize our understanding.</li>
+                        </ul>
+                    </li>
+                    <li>1950s&ndash;1990s, <strong>computational science</strong>
+                        <ul>
+                            <li>Over the last 50 years, most disciplines have grown a third, <em>computational</em> branch (e.g. empirical, theoretical, and computational ecology, or physics, or linguistics.)</li>
+                            <li>Computational Science traditionally meant simulation. It grew out of our inability to find closed-form solutions for complex mathematical models.</li>
+                        </ul>
+                    </li>
+                    <li>1990&ndash;now, <strong>data science</strong>
+                        <ul>
+                            <li>The flood of data from new scientific instruments and simulations</li>
+                            <li>The ability to economically store and manage petabytes of data online</li>
+                            <li>The Internet and computing Grid that makes all these archives universally accessible</li>
+                            <li>Scientific info. management, acquisition, organization, query, and visualization tasks scale almost linearly with data volumes. <span class="red-text">Data mining</span> is a major new challenge!</li>
+                        </ul>
+                    </li>
+                    <li>Jim Gray and Alex Szalay, <em>The World Wide Telescope: An Archetype for Online Science</em>, Comm. ACM, 45(11): 50&ndash;54, Nov. 2002</li>
+                </ul>
+            </div>
+            <span class="pg-num">4</span>
+        </div>
+
+        <!-- ===== PAGE 5 : EVOLUTION OF DATABASE TECHNOLOGY ===== -->
+        <div class="slide" id="page-5">
+            <div class="slide-header"><h2>Evolution of Database Technology</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>1960s:
+                        <ul><li>Data collection, database creation, IMS and network DBMS</li></ul>
+                    </li>
+                    <li>1970s:
+                        <ul><li>Relational data model, relational DBMS implementation</li></ul>
+                    </li>
+                    <li>1980s:
+                        <ul>
+                            <li>RDBMS, advanced data models (extended-relational, OO, deductive, etc.)</li>
+                            <li>Application-oriented DBMS (spatial, scientific, engineering, etc.)</li>
+                        </ul>
+                    </li>
+                    <li>1990s:
+                        <ul><li>Data mining, data warehousing, multimedia databases, and Web databases</li></ul>
+                    </li>
+                    <li>2000s
+                        <ul>
+                            <li>Stream data management and mining</li>
+                            <li>Data mining and its applications</li>
+                            <li>Web technology (XML, data integration) and global information systems</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">5</span>
+        </div>
+
+        <!-- ===== PAGE 6 : TOC — What Is Data Mining? ===== -->
+        <div class="slide" id="page-6">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li class="current">What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">6</span>
+        </div>
+
+        <!-- ===== PAGE 7 : WHAT IS DATA MINING ===== -->
+        <div class="slide" id="page-7">
+            <div class="slide-header"><h2>What Is Data Mining?</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Data mining (knowledge discovery from data)
+                        <ul>
+                            <li>Extraction of interesting (<span class="ul-text">non-trivial</span>, <span class="ul-text">implicit</span>, <span class="ul-text">previously unknown</span> and <span class="ul-text">potentially useful</span>) patterns or knowledge from huge amount of data</li>
+                            <li>Data mining: a misnomer?</li>
+                        </ul>
+                    </li>
+                    <li>Alternative names
+                        <ul>
+                            <li>Knowledge discovery (mining) in databases (KDD), knowledge extraction, data/pattern analysis, data archeology, data dredging, information harvesting, business intelligence, etc.</li>
+                        </ul>
+                    </li>
+                    <li>Watch out: Is everything &ldquo;data mining&rdquo;?
+                        <ul>
+                            <li>Simple search and query processing</li>
+                            <li>(Deductive) expert systems</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">7</span>
+        </div>
+
+        <!-- ===== PAGE 8 : KDD PROCESS ===== -->
+        <div class="slide" id="page-8">
+            <div class="slide-header"><h2>Knowledge Discovery (KDD) Process</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>This is a view from typical database systems and data warehousing communities</li>
+                    <li>Data mining plays an essential role in the knowledge discovery process</li>
+                </ul>
+                <div class="kdd-diagram">
+                    <div class="kdd-flow">
+                        <div class="kdd-box">Databases</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box">Data<br>Cleaning</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box">Data<br>Integration</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box">Data<br>Warehouse</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box">Task-relevant<br>Data</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box dm">Data<br>Mining</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box">Pattern<br>Evaluation</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="kdd-box kn">Knowledge</div>
+                    </div>
+                </div>
+            </div>
+            <span class="pg-num">8</span>
+        </div>
+
+        <!-- ===== PAGE 9 : WEB MINING FRAMEWORK ===== -->
+        <div class="slide" id="page-9">
+            <div class="slide-header"><h2>Example: A Web Mining Framework</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Web mining usually involves
+                        <ul>
+                            <li>Data cleaning</li>
+                            <li>Data integration from multiple sources</li>
+                            <li>Warehousing the data</li>
+                            <li>Data cube construction</li>
+                            <li>Data selection for data mining</li>
+                            <li>Data mining</li>
+                            <li>Presentation of the mining results</li>
+                            <li>Patterns and knowledge to be used or stored into knowledge-base</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">9</span>
+        </div>
+
+        <!-- ===== PAGE 10 : BI PYRAMID ===== -->
+        <div class="slide" id="page-10">
+            <div class="slide-header"><h2>Data Mining in Business Intelligence</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <div class="bi-pyramid">
+                    <div class="bi-row"><div class="bi-cell">Decision Making <span class="role-badge">End User</span></div></div>
+                    <div class="bi-row"><div class="bi-cell">Data Presentation &nbsp;|&nbsp; <em>Visualization Techniques</em> <span class="role-badge">Business Analyst</span></div></div>
+                    <div class="bi-row"><div class="bi-cell">Data Mining &nbsp;|&nbsp; <em>Information Discovery</em> <span class="role-badge">Data Analyst</span></div></div>
+                    <div class="bi-row"><div class="bi-cell">Data Exploration &nbsp;|&nbsp; <em>Statistical Summary, Querying, and Reporting</em></div></div>
+                    <div class="bi-row"><div class="bi-cell">Data Preprocessing / Integration, Data Warehouses</div></div>
+                    <div class="bi-row"><div class="bi-cell">Data Sources &nbsp;|&nbsp; <em>Paper, Files, Web documents, Scientific experiments, Database Systems</em> <span class="role-badge">DBA</span></div></div>
+                </div>
+                <p style="font-size:12px;color:#888;margin-top:8px;text-align:center;">&#9650; Increasing potential to support business decisions</p>
+            </div>
+            <span class="pg-num">10</span>
+        </div>
+
+        <!-- ===== PAGE 11 : MINING VS DATA EXPLORATION ===== -->
+        <div class="slide" id="page-11">
+            <div class="slide-header"><h2>Example: Mining vs. Data Exploration</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Business intelligence view
+                        <ul><li>Warehouse, data cube, reporting but not much mining</li></ul>
+                    </li>
+                    <li>Business objects vs. data mining tools</li>
+                    <li>Supply chain example: tools</li>
+                    <li>Data presentation</li>
+                    <li>Exploration</li>
+                </ul>
+            </div>
+            <span class="pg-num">11</span>
+        </div>
+
+        <!-- ===== PAGE 12 : KDD FROM ML & STATISTICS ===== -->
+        <div class="slide" id="page-12">
+            <div class="slide-header"><h2>KDD Process: A Typical View from ML and Statistics</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <div class="ml-flow">
+                    <div class="ml-flow-inner">
+                        <div class="ml-box inp">Input<br>Data</div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="ml-box pre">Data Pre-Processing
+                            <div class="ml-sub">Data integration<br>Normalization<br>Feature selection<br>Dimension reduction</div>
+                        </div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="ml-box dm2">Data Mining
+                            <div class="ml-sub">Pattern discovery<br>Association &amp; correlation<br>Classification<br>Clustering<br>Outlier analysis</div>
+                        </div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="ml-box post">Post-Processing
+                            <div class="ml-sub">Pattern evaluation<br>Pattern selection<br>Pattern interpretation<br>Pattern visualization</div>
+                        </div>
+                        <span class="kdd-arr">&rarr;</span>
+                        <div class="ml-box res">&#128202;</div>
+                    </div>
+                </div>
+                <div style="margin-top:12px;">
+                    <div class="slide-body">
+                        <ul><li>This is a view from typical machine learning and statistics communities</li></ul>
+                    </div>
+                </div>
+            </div>
+            <span class="pg-num">12</span>
+        </div>
+
+        <!-- ===== PAGE 13 : MEDICAL DATA MINING ===== -->
+        <div class="slide" id="page-13">
+            <div class="slide-header"><h2>Example: Medical Data Mining</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Health care &amp; medical data mining &ndash; often adopted such a view in statistics and machine learning</li>
+                    <li>Preprocessing of the data (including feature extraction and dimension reduction)</li>
+                    <li>Classification or/and clustering processes</li>
+                    <li>Post-processing for presentation</li>
+                </ul>
+            </div>
+            <span class="pg-num">13</span>
+        </div>
+
+        <!-- ===== PAGE 14 : TOC — Multi-Dimensional View ===== -->
+        <div class="slide" id="page-14">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li class="current">A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">14</span>
+        </div>
+
+        <!-- ===== PAGE 15 : MULTI-DIMENSIONAL VIEW ===== -->
+        <div class="slide" id="page-15">
+            <div class="slide-header"><h2>Multi-Dimensional View of Data Mining</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li><span class="ul-text">Data to be mined</span>
+                        <ul>
+                            <li>Database data (extended-relational, object-oriented, heterogeneous, legacy), data warehouse, transactional data, stream, spatiotemporal, time-series, sequence, text and web, multi-media, graphs &amp; social and information networks</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Knowledge to be mined (or: Data mining functions)</span>
+                        <ul>
+                            <li>Characterization, discrimination, association, classification, clustering, trend/deviation, outlier analysis, etc.</li>
+                            <li>Descriptive vs. predictive data mining</li>
+                            <li>Multiple/integrated functions and mining at multiple levels</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Techniques utilized</span>
+                        <ul>
+                            <li>Data-intensive, data warehouse (OLAP), machine learning, statistics, pattern recognition, visualization, high-performance, etc.</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Applications adapted</span>
+                        <ul>
+                            <li>Retail, telecommunication, banking, fraud analysis, bio-data mining, stock market analysis, text mining, Web mining, etc.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">15</span>
+        </div>
+
+        <!-- ===== PAGE 16 : TOC — What Kind of Data ===== -->
+        <div class="slide" id="page-16">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li class="current">What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">16</span>
+        </div>
+
+        <!-- ===== PAGE 17 : WHAT KINDS OF DATA ===== -->
+        <div class="slide" id="page-17">
+            <div class="slide-header"><h2>Data Mining: On What Kinds of Data?</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Database-oriented data sets and applications
+                        <ul>
+                            <li>Relational database, data warehouse, transactional database</li>
+                        </ul>
+                    </li>
+                    <li>Advanced data sets and advanced applications
+                        <ul>
+                            <li>Data streams and sensor data</li>
+                            <li>Time-series data, temporal data, sequence data (incl. bio-sequences)</li>
+                            <li>Structure data, graphs, social networks and multi-linked data</li>
+                            <li>Object-relational databases</li>
+                            <li>Heterogeneous databases and legacy databases</li>
+                            <li>Spatial data and spatiotemporal data</li>
+                            <li>Multimedia database</li>
+                            <li>Text databases</li>
+                            <li>The World-Wide Web</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">17</span>
+        </div>
+
+        <!-- ===== PAGE 18 : TOC — What Kinds of Patterns ===== -->
+        <div class="slide" id="page-18">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li class="current">What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">18</span>
+        </div>
+
+        <!-- ===== PAGE 19 : FUNCTION 1 — GENERALIZATION ===== -->
+        <div class="slide" id="page-19">
+            <div class="slide-header"><h2>Data Mining Function: (1) Generalization</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Information integration and data warehouse construction
+                        <ul>
+                            <li>Data cleaning, transformation, integration, and multidimensional data model</li>
+                        </ul>
+                    </li>
+                    <li>Data cube technology
+                        <ul>
+                            <li>Scalable methods for computing (i.e., materializing) multidimensional aggregates</li>
+                            <li>OLAP (online analytical processing)</li>
+                        </ul>
+                    </li>
+                    <li>Multidimensional concept description: Characterization and discrimination
+                        <ul>
+                            <li>Generalize, summarize, and contrast data characteristics, e.g., dry vs. wet region</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">19</span>
+        </div>
+
+        <!-- ===== PAGE 20 : FUNCTION 2 — ASSOCIATION ===== -->
+        <div class="slide" id="page-20">
+            <div class="slide-header"><h2>Data Mining Function: (2) Association and Correlation Analysis</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Frequent patterns (or frequent itemsets)
+                        <ul>
+                            <li>What items are frequently purchased together in your Walmart?</li>
+                        </ul>
+                    </li>
+                    <li>Association, correlation vs. causality
+                        <ul>
+                            <li>A typical association rule
+                                <ul>
+                                    <li>Diaper &rarr; Beer [0.5%, 75%] &nbsp;(support, confidence)</li>
+                                </ul>
+                            </li>
+                            <li>Are strongly associated items also strongly correlated?</li>
+                        </ul>
+                    </li>
+                    <li>How to mine such patterns and rules efficiently in large datasets?</li>
+                    <li>How to use such patterns for classification, clustering, and other applications?</li>
+                </ul>
+            </div>
+            <span class="pg-num">20</span>
+        </div>
+
+        <!-- ===== PAGE 21 : FUNCTION 3 — CLASSIFICATION ===== -->
+        <div class="slide" id="page-21">
+            <div class="slide-header"><h2>Data Mining Function: (3) Classification</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Classification and label prediction
+                        <ul>
+                            <li>Construct models (functions) based on some training examples</li>
+                            <li>Describe and distinguish classes or concepts for future prediction
+                                <ul>
+                                    <li>E.g., classify countries based on (climate), or classify cars based on (gas mileage)</li>
+                                </ul>
+                            </li>
+                            <li>Predict some unknown class labels</li>
+                        </ul>
+                    </li>
+                    <li>Typical methods
+                        <ul>
+                            <li>Decision trees, na&iuml;ve Bayesian classification, support vector machines, neural networks, rule-based classification, pattern-based classification, logistic regression, &hellip;</li>
+                        </ul>
+                    </li>
+                    <li>Typical applications:
+                        <ul>
+                            <li>Credit card fraud detection, direct marketing, classifying stars, diseases, web-pages, &hellip;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">21</span>
+        </div>
+
+        <!-- ===== PAGE 22 : FUNCTION 4 — CLUSTER ANALYSIS ===== -->
+        <div class="slide" id="page-22">
+            <div class="slide-header"><h2>Data Mining Function: (4) Cluster Analysis</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Unsupervised learning (i.e., Class label is unknown)</li>
+                    <li>Group data to form new categories (i.e., clusters), e.g., cluster houses to find distribution patterns</li>
+                    <li>Principle: Maximizing intra-class similarity &amp; minimizing interclass similarity</li>
+                    <li>Many methods and applications</li>
+                </ul>
+            </div>
+            <span class="pg-num">22</span>
+        </div>
+
+        <!-- ===== PAGE 23 : FUNCTION 5 — OUTLIER ANALYSIS ===== -->
+        <div class="slide" id="page-23">
+            <div class="slide-header"><h2>Data Mining Function: (5) Outlier Analysis</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Outlier analysis
+                        <ul>
+                            <li>Outlier: A data object that does not comply with the general behavior of the data</li>
+                            <li>Noise or exception? &mdash; One person&rsquo;s garbage could be another person&rsquo;s treasure</li>
+                            <li>Methods: by product of clustering or regression analysis, &hellip;</li>
+                            <li>Useful in fraud detection, rare events analysis</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">23</span>
+        </div>
+
+        <!-- ===== PAGE 24 : SEQUENTIAL PATTERN ===== -->
+        <div class="slide" id="page-24">
+            <div class="slide-header"><h2>Time and Ordering: Sequential Pattern, Trend and Evolution Analysis</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Sequence, trend and evolution analysis
+                        <ul>
+                            <li>Trend, time-series, and deviation analysis: e.g., regression and value prediction</li>
+                            <li>Sequential pattern mining
+                                <ul>
+                                    <li>e.g., first buy digital camera, then buy large SD memory cards</li>
+                                </ul>
+                            </li>
+                            <li>Periodicity analysis</li>
+                            <li>Motifs and biological sequence analysis
+                                <ul>
+                                    <li>Approximate and consecutive motifs</li>
+                                </ul>
+                            </li>
+                            <li>Similarity-based analysis</li>
+                        </ul>
+                    </li>
+                    <li>Mining data streams
+                        <ul>
+                            <li>Ordered, time-varying, potentially infinite, data streams</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">24</span>
+        </div>
+
+        <!-- ===== PAGE 25 : STRUCTURE & NETWORK ANALYSIS ===== -->
+        <div class="slide" id="page-25">
+            <div class="slide-header"><h2>Structure and Network Analysis</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Graph mining
+                        <ul>
+                            <li>Finding frequent subgraphs (e.g., chemical compounds), trees (XML), substructures (web fragments)</li>
+                        </ul>
+                    </li>
+                    <li>Information network analysis
+                        <ul>
+                            <li>Social networks: actors (objects, nodes) and relationships (edges)
+                                <ul>
+                                    <li>e.g., author networks in CS, terrorist networks</li>
+                                </ul>
+                            </li>
+                            <li>Multiple heterogeneous networks
+                                <ul>
+                                    <li>A person could be multiple information networks: friends, family, classmates, &hellip;</li>
+                                </ul>
+                            </li>
+                            <li>Links carry a lot of semantic information: Link mining</li>
+                        </ul>
+                    </li>
+                    <li>Web mining
+                        <ul>
+                            <li>Web is a big information network: from PageRank to Google</li>
+                            <li>Analysis of Web information networks
+                                <ul>
+                                    <li>Web community discovery, opinion mining, usage mining, &hellip;</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">25</span>
+        </div>
+
+        <!-- ===== PAGE 26 : EVALUATION OF KNOWLEDGE ===== -->
+        <div class="slide" id="page-26">
+            <div class="slide-header"><h2>Evaluation of Knowledge</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Are all mined knowledge interesting?
+                        <ul>
+                            <li>One can mine tremendous amount of &ldquo;patterns&rdquo; and knowledge</li>
+                            <li>Some may fit only certain dimension space (time, location, &hellip;)</li>
+                            <li>Some may not be representative, may be transient, &hellip;</li>
+                        </ul>
+                    </li>
+                    <li>Evaluation of mined knowledge &rarr; directly mine only interesting knowledge?
+                        <ul>
+                            <li>Descriptive vs. predictive</li>
+                            <li>Coverage</li>
+                            <li>Typicality vs. novelty</li>
+                            <li>Accuracy</li>
+                            <li>Timeliness</li>
+                            <li>&hellip;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">26</span>
+        </div>
+
+        <!-- ===== PAGE 27 : TOC — What Technology ===== -->
+        <div class="slide" id="page-27">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li class="current">What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">27</span>
+        </div>
+
+        <!-- ===== PAGE 28 : CONFLUENCE DIAGRAM ===== -->
+        <div class="slide" id="page-28">
+            <div class="slide-header"><h2>Data Mining: Confluence of Multiple Disciplines</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <div class="confluence">
+                    <div class="conf-row">
+                        <div class="conf-chip">Machine Learning</div>
+                        <div class="conf-chip">Pattern Recognition</div>
+                        <div class="conf-chip">Statistics</div>
+                    </div>
+                    <div class="conf-row">
+                        <div class="conf-chip">Applications</div>
+                        <div class="conf-center">Data Mining</div>
+                        <div class="conf-chip">Visualization</div>
+                    </div>
+                    <div class="conf-row">
+                        <div class="conf-chip">Algorithm</div>
+                        <div class="conf-chip">Database Technology</div>
+                        <div class="conf-chip">High-Performance Computing</div>
+                    </div>
+                </div>
+            </div>
+            <span class="pg-num">28</span>
+        </div>
+
+        <!-- ===== PAGE 29 : WHY CONFLUENCE ===== -->
+        <div class="slide" id="page-29">
+            <div class="slide-header"><h2>Why Confluence of Multiple Disciplines?</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Tremendous amount of data
+                        <ul>
+                            <li>Algorithms must be highly scalable to handle such as tera-bytes of data</li>
+                        </ul>
+                    </li>
+                    <li>High-dimensionality of data
+                        <ul>
+                            <li>Micro-array may have tens of thousands of dimensions</li>
+                        </ul>
+                    </li>
+                    <li>High complexity of data
+                        <ul>
+                            <li>Data streams and sensor data</li>
+                            <li>Time-series data, temporal data, sequence data</li>
+                            <li>Structure data, graphs, social networks and multi-linked data</li>
+                            <li>Heterogeneous databases and legacy databases</li>
+                            <li>Spatial, spatiotemporal, multimedia, text and Web data</li>
+                            <li>Software programs, scientific simulations</li>
+                        </ul>
+                    </li>
+                    <li>New and sophisticated applications</li>
+                </ul>
+            </div>
+            <span class="pg-num">29</span>
+        </div>
+
+        <!-- ===== PAGE 30 : TOC — Applications ===== -->
+        <div class="slide" id="page-30">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li class="current">What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">30</span>
+        </div>
+
+        <!-- ===== PAGE 31 : APPLICATIONS ===== -->
+        <div class="slide" id="page-31">
+            <div class="slide-header"><h2>Applications of Data Mining</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Web page analysis: from web page classification, clustering to PageRank &amp; HITS algorithms</li>
+                    <li>Collaborative analysis &amp; recommender systems</li>
+                    <li>Basket data analysis to targeted marketing</li>
+                    <li>Biological and medical data analysis: classification, cluster analysis (microarray data analysis), biological sequence analysis, biological network analysis</li>
+                    <li>Data mining and software engineering (e.g., IEEE Computer, Aug. 2009 issue)</li>
+                    <li>From major dedicated data mining systems/tools (e.g., SAS, MS SQL-Server Analysis Manager, Oracle Data Mining Tools) to invisible data mining</li>
+                </ul>
+            </div>
+            <span class="pg-num">31</span>
+        </div>
+
+        <!-- ===== PAGE 32 : TOC — Major Issues ===== -->
+        <div class="slide" id="page-32">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li class="current">Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">32</span>
+        </div>
+
+        <!-- ===== PAGE 33 : MAJOR ISSUES (1) ===== -->
+        <div class="slide" id="page-33">
+            <div class="slide-header"><h2>Major Issues in Data Mining (1)</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Mining Methodology
+                        <ul>
+                            <li>Mining various and new kinds of knowledge</li>
+                            <li>Mining knowledge in multi-dimensional space</li>
+                            <li>Data mining: An interdisciplinary effort</li>
+                            <li>Boosting the power of discovery in a networked environment</li>
+                            <li>Handling noise, uncertainty, and incompleteness of data</li>
+                            <li>Pattern evaluation and pattern- or constraint-guided mining</li>
+                        </ul>
+                    </li>
+                    <li>User Interaction
+                        <ul>
+                            <li>Interactive mining</li>
+                            <li>Incorporation of background knowledge</li>
+                            <li>Presentation and visualization of data mining results</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">33</span>
+        </div>
+
+        <!-- ===== PAGE 34 : MAJOR ISSUES (2) ===== -->
+        <div class="slide" id="page-34">
+            <div class="slide-header"><h2>Major Issues in Data Mining (2)</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Efficiency and Scalability
+                        <ul>
+                            <li>Efficiency and scalability of data mining algorithms</li>
+                            <li>Parallel, distributed, stream, and incremental mining methods</li>
+                        </ul>
+                    </li>
+                    <li>Diversity of data types
+                        <ul>
+                            <li>Handling complex types of data</li>
+                            <li>Mining dynamic, networked, and global data repositories</li>
+                        </ul>
+                    </li>
+                    <li>Data mining and society
+                        <ul>
+                            <li>Social impacts of data mining</li>
+                            <li>Privacy-preserving data mining</li>
+                            <li>Invisible data mining</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">34</span>
+        </div>
+
+        <!-- ===== PAGE 35 : TOC — History ===== -->
+        <div class="slide" id="page-35">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li class="current">A Brief History of Data Mining and Data Mining Society</li>
+                <li>Summary</li>
+            </ul>
+            <span class="pg-num">35</span>
+        </div>
+
+        <!-- ===== PAGE 36 : HISTORY ===== -->
+        <div class="slide" id="page-36">
+            <div class="slide-header"><h2>A Brief History of Data Mining Society</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>1989 IJCAI Workshop on Knowledge Discovery in Databases
+                        <ul>
+                            <li>Knowledge Discovery in Databases (G. Piatetsky-Shapiro and W. Frawley, 1991)</li>
+                        </ul>
+                    </li>
+                    <li>1991&ndash;1994 Workshops on Knowledge Discovery in Databases
+                        <ul>
+                            <li>Advances in Knowledge Discovery and Data Mining (U. Fayyad, G. Piatetsky-Shapiro, P. Smyth, and R. Uthurusamy, 1996)</li>
+                        </ul>
+                    </li>
+                    <li>1995&ndash;1998 International Conferences on Knowledge Discovery in Databases and Data Mining (KDD&rsquo;95-98)
+                        <ul>
+                            <li>Journal of Data Mining and Knowledge Discovery (1997)</li>
+                        </ul>
+                    </li>
+                    <li>ACM SIGKDD conferences since 1998 and SIGKDD Explorations</li>
+                    <li>More conferences on data mining
+                        <ul>
+                            <li>PAKDD (1997), PKDD (1997), SIAM-Data Mining (2001), (IEEE) ICDM (2001), etc.</li>
+                        </ul>
+                    </li>
+                    <li>ACM Transactions on KDD starting in 2007</li>
+                </ul>
+            </div>
+            <span class="pg-num">36</span>
+        </div>
+
+        <!-- ===== PAGE 37 : CONFERENCES & JOURNALS ===== -->
+        <div class="slide" id="page-37">
+            <div class="slide-header"><h2>Conferences and Journals on Data Mining</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="two-col">
+                <div class="col">
+                    <div class="slide-body">
+                        <ul>
+                            <li>KDD Conferences
+                                <ul>
+                                    <li>ACM SIGKDD Int. Conf. on Knowledge Discovery in Databases and Data Mining (KDD)</li>
+                                    <li>SIAM Data Mining Conf. (SDM)</li>
+                                    <li>(IEEE) Int. Conf. on Data Mining (ICDM)</li>
+                                    <li>European Conf. on Machine Learning and Principles and Practices of Knowledge Discovery and Data Mining (ECML-PKDD)</li>
+                                    <li>Pacific-Asia Conf. on Knowledge Discovery and Data Mining (PAKDD)</li>
+                                    <li>Int. Conf. on Web Search and Data Mining (WSDM)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="slide-body">
+                        <ul>
+                            <li>Other related conferences
+                                <ul>
+                                    <li>DB conferences: ACM SIGMOD, VLDB, ICDE, EDBT, ICDT, &hellip;</li>
+                                    <li>Web and IR conferences: WWW, SIGIR, WSDM</li>
+                                    <li>ML conferences: ICML, NIPS</li>
+                                    <li>PR conferences: CVPR</li>
+                                </ul>
+                            </li>
+                            <li>Journals
+                                <ul>
+                                    <li>Data Mining and Knowledge Discovery (DAMI or DMKD)</li>
+                                    <li>IEEE Trans. on Knowledge and Data Eng. (TKDE)</li>
+                                    <li>KDD Explorations</li>
+                                    <li>ACM Trans. on KDD</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="pg-num">37</span>
+        </div>
+
+        <!-- ===== PAGE 38 : WHERE TO FIND REFERENCES ===== -->
+        <div class="slide" id="page-38">
+            <div class="slide-header"><h2>Where to Find References? DBLP, CiteSeer, Google</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li><span class="ul-text">Data mining and KDD (SIGKDD: CDROM)</span>
+                        <ul>
+                            <li>Conferences: ACM-SIGKDD, IEEE-ICDM, SIAM-DM, PKDD, PAKDD, etc.</li>
+                            <li>Journal: Data Mining and Knowledge Discovery, KDD Explorations, ACM TKDD</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Database systems (SIGMOD: ACM SIGMOD Anthology &mdash; CD ROM)</span>
+                        <ul>
+                            <li>Conferences: ACM-SIGMOD, ACM-PODS, VLDB, IEEE-ICDE, EDBT, ICDT, DASFAA</li>
+                            <li>Journals: IEEE-TKDE, ACM-TODS/TOIS, JIIS, J. ACM, VLDB J., Info. Sys., etc.</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">AI &amp; Machine Learning</span>
+                        <ul>
+                            <li>Conferences: Machine learning (ML), AAAI, IJCAI, COLT (Learning Theory), CVPR, NIPS, etc.</li>
+                            <li>Journals: Machine Learning, Artificial Intelligence, Knowledge and Information Systems, IEEE-PAMI, etc.</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Web and IR</span>
+                        <ul>
+                            <li>Conferences: SIGIR, WWW, CIKM, etc.</li>
+                            <li>Journals: WWW: Internet and Web Information Systems</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Statistics</span>
+                        <ul>
+                            <li>Conferences: Joint Stat. Meeting, etc.</li>
+                            <li>Journals: Annals of statistics, etc.</li>
+                        </ul>
+                    </li>
+                    <li><span class="ul-text">Visualization</span>
+                        <ul>
+                            <li>Conference proceedings: CHI, ACM-SIGGraph, etc.</li>
+                            <li>Journals: IEEE Trans. visualization and computer graphics, etc.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="pg-num">38</span>
+        </div>
+
+        <!-- ===== PAGE 39 : TOC — Summary ===== -->
+        <div class="slide" id="page-39">
+            <div class="slide-header"><h2>Chapter 1. Introduction</h2></div>
+            <div class="rainbow-bar"></div>
+            <ul class="toc-list">
+                <li>Why Data Mining?</li>
+                <li>What Is Data Mining?</li>
+                <li>A Multi-Dimensional View of Data Mining</li>
+                <li>What Kind of Data Can Be Mined?</li>
+                <li>What Kinds of Patterns Can Be Mined?</li>
+                <li>What Technology Are Used?</li>
+                <li>What Kind of Applications Are Targeted?</li>
+                <li>Major Issues in Data Mining</li>
+                <li>A Brief History of Data Mining and Data Mining Society</li>
+                <li class="current">Summary</li>
+            </ul>
+            <span class="pg-num">39</span>
+        </div>
+
+        <!-- ===== PAGE 40 : SUMMARY ===== -->
+        <div class="slide" id="page-40">
+            <div class="slide-header"><h2>Summary</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>Data mining: Discovering interesting patterns and knowledge from massive amount of data</li>
+                    <li>A natural evolution of database technology, in great demand, with wide applications</li>
+                    <li>A KDD process includes data cleaning, data integration, data selection, transformation, data mining, pattern evaluation, and knowledge presentation</li>
+                    <li>Mining can be performed in a variety of data</li>
+                    <li>Data mining functionalities: characterization, discrimination, association, classification, clustering, outlier and trend analysis, etc.</li>
+                    <li>Data mining technologies and applications</li>
+                    <li>Major issues in data mining</li>
+                </ul>
+            </div>
+            <span class="pg-num">40</span>
+        </div>
+
+        <!-- ===== PAGE 41 : RECOMMENDED REFERENCE BOOKS ===== -->
+        <div class="slide" id="page-41">
+            <div class="slide-header"><h2>Recommended Reference Books</h2></div>
+            <div class="rainbow-bar"></div>
+            <div class="slide-body">
+                <ul>
+                    <li>S. Chakrabarti. <em>Mining the Web: Statistical Analysis of Hypertex and Semi-Structured Data.</em> Morgan Kaufmann, 2002</li>
+                    <li>R. O. Duda, P. E. Hart, and D. G. Stork, <em>Pattern Classification,</em> 2ed., Wiley-Interscience, 2000</li>
+                    <li>T. Dasu and T. Johnson. <em>Exploratory Data Mining and Data Cleaning.</em> John Wiley &amp; Sons, 2003</li>
+                    <li>U. M. Fayyad, G. Piatetsky-Shapiro, P. Smyth, and R. Uthurusamy. <em>Advances in Knowledge Discovery and Data Mining.</em> AAAI/MIT Press, 1996</li>
+                    <li>U. Fayyad, G. Grinstein, and A. Wierse, <em>Information Visualization in Data Mining and Knowledge Discovery,</em> Morgan Kaufmann, 2001</li>
+                    <li><strong style="color:#b71c1c;">J. Han and M. Kamber. <em>Data Mining: Concepts and Techniques.</em> Morgan Kaufmann, 3<sup>rd</sup> ed., 2011</strong></li>
+                    <li>D. J. Hand, H. Mannila, and P. Smyth, <em>Principles of Data Mining,</em> MIT Press, 2001</li>
+                    <li><strong style="color:#b71c1c;">T. Hastie, R. Tibshirani, and J. Friedman, <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction,</em> 2<sup>nd</sup> ed., Springer-Verlag, 2009</strong></li>
+                    <li><strong style="color:#b71c1c;">B. Liu, <em>Web Data Mining,</em> Springer 2006.</strong></li>
+                    <li>T. M. Mitchell, <em>Machine Learning,</em> McGraw Hill, 1997</li>
+                    <li>G. Piatetsky-Shapiro and W. J. Frawley. <em>Knowledge Discovery in Databases.</em> AAAI/MIT Press, 1991</li>
+                    <li><strong style="color:#b71c1c;">P.-N. Tan, M. Steinbach and V. Kumar, <em>Introduction to Data Mining,</em> Wiley, 2005</strong></li>
+                    <li>S. M. Weiss and N. Indurkhya, <em>Predictive Data Mining,</em> Morgan Kaufmann, 1998</li>
+                    <li><strong style="color:#b71c1c;">I. H. Witten and E. Frank, <em>Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations,</em> Morgan Kaufmann, 2<sup>nd</sup> ed. 2005</strong></li>
+                </ul>
+            </div>
+            <span class="pg-num">41</span>
+        </div>
+
+    </div><!-- /slides-wrapper -->
+
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="bottom-nav">
+        <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>&#8592; Previous</button>
+        <span class="page-info" id="pageInfo">Page 1 of 41</span>
+        <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Next &#8594;</button>
+    </nav>
+
+</div><!-- /container -->
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+    var current = 1;
+    var total   = 41;
+
+    function navigate(dir) {
+        // Hide current slide
+        document.getElementById('page-' + current).classList.remove('active');
+
+        // Move to next/previous
+        current += dir;
+        if (current < 1)     current = 1;
+        if (current > total) current = total;
+
+        // Show new slide
+        document.getElementById('page-' + current).classList.add('active');
+
+        // Update counter
+        document.getElementById('pageInfo').textContent = 'Page ' + current + ' of ' + total;
+
+        // Update button states
+        document.getElementById('prevBtn').disabled = (current === 1);
+        document.getElementById('nextBtn').disabled = (current === total);
+
+        // Scroll content area back to top
+        document.querySelector('.slides-wrapper').scrollTop = 0;
+    }
+
+    // Keyboard arrow key support
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            if (current < total) navigate(1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            if (current > 1) navigate(-1);
+        }
+    });
+</script>
+
+</body>
+</html>
